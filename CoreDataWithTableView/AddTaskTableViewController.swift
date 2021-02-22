@@ -17,8 +17,6 @@ class AddTaskTableViewController: UITableViewController {
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var prioritySegmentedControl: UISegmentedControl!
     
-    var task: ManagedTask?
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +42,5 @@ class AddTaskTableViewController: UITableViewController {
         } catch {
             print("Error deleting items with \(error)")
         }
-        
     }
 }
