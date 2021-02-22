@@ -76,9 +76,7 @@ class TaskTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let fetchedTask004 = fetchedTasks[indexPath.row]
-        print("fetchedTask004.isCompleted \(fetchedTask004.isCompleted) indexPath \(indexPath)")
         fetchedTask004.isCompleted.toggle()
-        print("fetchedTask004.isCompleted \(fetchedTask004.isCompleted) indexPath \(indexPath)")
         do {
             try container01.save()
         } catch {
@@ -87,6 +85,12 @@ class TaskTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         tableView.reloadData()
 
+    }
+    
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        let fetchedTask006 = fetchedTasks[indexPath.row]
+        taskToEdit = fetchedTask006
+        targetIndexPath = indexPath
     }
 
 }

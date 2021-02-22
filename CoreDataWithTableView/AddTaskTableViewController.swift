@@ -36,8 +36,6 @@ class AddTaskTableViewController: UITableViewController {
         fetchedTask001.priorityNumber = Int64(prioritySegmentedControl.selectedSegmentIndex)
         fetchedTask001.isCompleted = false
         
-        task = fetchedTask001
-        
         fetchedTasks.append(fetchedTask001)
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
